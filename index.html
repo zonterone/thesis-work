@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Homework</title>
+    <title>Thesis Work</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/fonts-style.css">
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
@@ -28,20 +28,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+      <form class="popup">
+        <fieldset class="popup__window">
+            <legend class="popup__header">
+              Ваши контакты
+            </legend>
+          <button class="button popup-close" type="reset" aria-label="Close">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+          <label class="popup__item" for="name">
+            <span>Имя</span>
+            <input type="text" name="name" id="name" placeholder="Ваше имя">
+          </label>
+          <label class="popup__item" for="phone">
+            <span>Телефон</span>
+            <input type="tel" name="tel" id="phone" placeholder="Ваш телефон">
+          </label>
+          <label class="popup__item" for="email">
+            <span>E-mail</span>
+            <input type="email" name="email" id="email" placeholder="Ваш E-mail">
+          </label>
+          <button class="button button-orange popup__submit" type="submit">Отправить</button>
+        </fieldset>
+    </form>
     <header class="header">
       <div class="wrap-container flex">
-        <button class="header__burger button" aria-label="Меню">
+        <button class="button header__burger" aria-label="Burger button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
         <nav class="header__menu menu">
-          <ul class="menu__list menu__list--row">
+          <ul class="menu__list menu__list--row for-anchor">
             <li class="menu__item">
-              <a class="menu__link" href="#">Услуги</a>
+              <a class="menu__link" href="#doings">Услуги</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Портфолио</a>
+              <a class="menu__link" href="#example">Портфолио</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Стоимость</a>
+              <a class="menu__link" href="#price">Стоимость</a>
             </li>
           </ul>
         </nav>
@@ -79,7 +106,7 @@
           </div>
         </div>
       </section>
-      <section class="doings">
+      <section class="doings" id="doings">
         <h2 class="doings__title">Что я делаю</h2>
         <ul class="wrap-container doings__wrap-container flex doings__flex">
           <li class="doings__things doings__things--landing">
@@ -97,7 +124,7 @@
         </ul>
         <button class="button-orange doings__request-price">Узнать стоимость</button>
       </section>
-      <section class="example">
+      <section class="example" id="example">
         <div class="wrap-container example__wrap-container">
           <h2 class="example__title">Примеры моих работ</h2>
           <div class="example__slider slider">
@@ -128,7 +155,7 @@
         </div>
         <button class="button-orange example__order">Заказать проект</button>
       </section>
-      <section class="price">
+      <section class="price" id="price">
         <div class="price__detail">
           <h2 class="price__info">
             Адаптивная вёрстка под все устройства и&nbsp;браузеры от&nbsp;1000 рублей всего за&nbsp;4&nbsp;часа.*
@@ -149,15 +176,15 @@
     <footer class="footer">
       <div class="wrap-container flex footer footer__wrap-container">
         <nav class="footer__menu menu">
-          <ul class="menu__list">
+          <ul class="menu__list for-anchor">
             <li class="menu__item">
-              <a class="menu__link" href="#">Услуги</a>
+              <a class="menu__link" href="#doings">Услуги</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Портфолио</a>
+              <a class="menu__link" href="#example">Портфолио</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Стоимость</a>
+              <a class="menu__link" href="#price">Стоимость</a>
             </li>
           </ul>
         </nav>
