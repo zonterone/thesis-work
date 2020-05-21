@@ -1,5 +1,7 @@
 $(document).ready(function(){
   $('.about__symbol').addClass('about__symbol--active');
+  $("#phone-request").inputmask("+7(999)999-99-99");
+  $("#phone-callback").inputmask("+7(999)999-99-99");
 
   $('.header__burger').click(function () {
     $(this).toggleClass('open');
@@ -13,21 +15,33 @@ $(document).ready(function(){
       $('body,html').animate({ scrollTop: top }, 800);
     });
 
-  $('.button-orange, .button-transparent, .popup-close').click(function () {
-    $('.popup__window').fadeToggle();
-    $('body').toggleClass('scrollOff');
-    $('header, main, footer').toggleClass('blur');
+  $('.popup-open-request').click(function () {
+    $('.popup--request').fadeIn();
+    $('body').addClass('scroll-off');
+    $('header, main, footer').addClass('blur');
+  });
+
+  $('.popup-open-callback').click(function () {
+    $('.popup--callback').fadeIn();
+    $('body').addClass('scroll-off');
+    $('header, main, footer').addClass('blur');
+  });
+
+  $('.popup-close').click(function () {
+    $('.popup').fadeOut();
+    $('body').removeClass('scroll-off');
+    $('header, main, footer').removeClass('blur');
   });
 
   $(document).mouseup(function (e) {
     var div = $(".popup__window");
     if (!div.is(e.target)
       && div.has(e.target).length === 0) {
-      div.fadeOut();
-      $('body').removeClass('scrollOff');
-      $('header, main, footer').removeClass('blur');
+      $('.popup').fadeOut();
+      $('body').removeClass('scroll-off');
+      $('header, main, footer').removeClass('blur');;
     }
-  });
+  }); 
 
   new Swiper('.slider', {
     slidesPerView: 1,
@@ -62,6 +76,24 @@ $(document).ready(function(){
       lastSlideMessage: 'Последний слайд',
       paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
+  });
+
+
+  var dataString = 'name=' + name + '&email=' + email + '&phone=' + phone;
+  //alert (dataString);return false;
+  $.ajax({
+    type: "POST",
+    url: "bin/process.php",
+    data: dataString,
+    success: function () {
+      $('#contact_form').html("<div id='message'></div>");
+      $('#message').html("<h2>Contact Form Submitted!</h2>")
+        .append("<p>We will be in touch soon.</p>")
+        .hide()
+        .fadeIn(1500, function () {
+          $('#message').append("<img id='checkmark' src='images/check.png' />");
+        });
+    }
   });
 
 });

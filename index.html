@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/jquery.inputmask.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -28,8 +29,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-      <form class="popup">
-        <fieldset class="popup__window">
+      <form class="popup popup--request" method="post">
+        <fieldset class="popup__window popup__window--request">
             <legend class="popup__header">
               Ваши контакты
             </legend>
@@ -38,20 +39,46 @@
             <span aria-hidden="true"></span>
           </button>
           <label class="popup__item" for="name">
-            <span>Имя</span>
-            <input type="text" name="name" id="name" placeholder="Ваше имя">
+            <span>Имя *</span>
+            <input type="text" name="name" id="name-request" placeholder="Ваше имя" required>
           </label>
           <label class="popup__item" for="phone">
-            <span>Телефон</span>
-            <input type="tel" name="tel" id="phone" placeholder="Ваш телефон">
+            <span>Телефон *</span>
+            <input type="tel" name="tel" id="phone-request" placeholder="Ваш телефон" required>
           </label>
           <label class="popup__item" for="email">
-            <span>E-mail</span>
-            <input type="email" name="email" id="email" placeholder="Ваш E-mail">
+            <span>E-mail *</span>
+            <input type="email" name="email" id="email" placeholder="Ваш E-mail" required>
           </label>
-          <button class="button button-orange popup__submit" type="submit">Отправить</button>
+          <p class="popup__description">
+            <sup>*</sup>Поля отмеченные звездочкой обязательны для заполнения
+          </p>
+          <button class="button button-orange popup__submit" type="submit" id="submit-request">Отправить</button>
         </fieldset>
     </form>
+          <form class="popup popup--callback" method="post">
+            <fieldset class="popup__window popup__window--callback">
+              <legend class="popup__header">
+                Ваши контакты
+              </legend>
+              <button class="button popup-close" type="reset" aria-label="Close">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </button>
+              <label class="popup__item" for="name">
+                <span>Имя *</span>
+                <input type="text" name="name" id="name-callback" placeholder="Ваше имя" required>
+              </label>
+              <label class="popup__item" for="phone">
+                <span>Телефон *</span>
+                <input type="tel" name="tel" id="phone-callback" placeholder="Ваш телефон" required>
+              </label>
+              <p class="popup__description">
+                Поля отмеченные звездочкой обязательны для заполнения
+              </p>
+              <button class="button button-orange popup__submit" type="submit">Отправить</button>
+            </fieldset>
+          </form>
     <header class="header">
       <div class="wrap-container flex">
         <button class="button header__burger" aria-label="Burger button">
@@ -72,11 +99,11 @@
             </li>
           </ul>
         </nav>
-        <div class="header__contacts">
+        <div class="header__contacts flex">
           <a class="header__phone" href="tel:+74999555577">
             +7 (499) 995-55-77
           </a>
-          <button class="button-transparent header__callback button-transparent--phone-icon">
+          <button class="button-transparent header__callback button-transparent--phone-icon popup-open-callback">
             Заказать звонок
           </button>
         </div>
@@ -94,7 +121,7 @@
           <p class="about__dev">
             Frontend-разработчик и веб-верстальщик
           </p>
-          <button class=" button-orange about__learn-more">
+          <button class=" button-orange about__learn-more popup-open-request">
             Узнать больше
           </button>
           <div class="about__symbol symbol" aria-hidden="true">
@@ -122,7 +149,7 @@
               Исправление и&nbsp;доработка существующей вёрстки
           </li>
         </ul>
-        <button class="button-orange doings__request-price">Узнать стоимость</button>
+        <button class="button-orange doings__request-price popup-open-request">Узнать стоимость</button>
       </section>
       <section class="example" id="example">
         <div class="wrap-container example__wrap-container">
@@ -153,7 +180,7 @@
             <div class="slider__pagination paginator"></div>
           </div>
         </div>
-        <button class="button-orange example__order">Заказать проект</button>
+        <button class="button-orange example__order popup-open-request">Заказать проект</button>
       </section>
       <section class="price" id="price">
         <div class="price__detail">
@@ -197,7 +224,7 @@
           </a>
         </address>
         <div class="footer__links">
-          <button class="button-transparent footer__callback">
+          <button class="button-transparent footer__callback popup-open-callback">
             Заказать звонок
           </button>
           <ul class="footer__social social">
