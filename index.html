@@ -1,88 +1,174 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Thesis Work</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/fonts-style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts-style.css" />
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.inputmask.js"></script>
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/script.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
+
   <body>
-      <form class="popup popup--request">
-        <fieldset class="popup__window popup__window--request">
-            <legend class="popup__header">
-              Ваши контакты
-            </legend>
-          <button class="button popup-close" type="reset" aria-label="Close">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </button>
-          <label class="popup__item" for="name">
-            <span>Имя *</span>
-            <input type="text" name="name" id="name-request" placeholder="Ваше имя" required>
-          </label>
-          <label class="popup__item" for="phone">
-            <span>Телефон *</span>
-            <input type="tel" name="tel" id="phone-request" placeholder="Ваш телефон" required>
-          </label>
-          <label class="popup__item" for="email">
-            <span>E-mail *</span>
-            <input type="email" name="email" id="email" placeholder="Ваш E-mail" required>
-          </label>
-          <p class="popup__description">
-            <sup>*</sup>Поля отмеченные звездочкой обязательны для заполнения
-          </p>
-          <button class="button button-orange popup__submit" type="submit">
-            Отправить
-          </button>
-        </fieldset>
+    <form class="popup popup--request">
+      <fieldset class="popup__window popup__window--request">
+        <legend class="popup__header">
+          Ваши контакты
+        </legend>
+        <button class="button popup-close" type="reset" aria-label="Close">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <label class="popup__item" for="name-request">
+          <span>Имя *</span>
+          <input
+            type="text"
+            name="name"
+            id="name-request"
+            placeholder="Ваше имя"
+          />
+        </label>
+        <label class="popup__item" for="phone-request">
+          <span>Телефон *</span>
+          <input
+            type="tel"
+            name="phone"
+            id="phone-request"
+            placeholder="Ваш телефон"
+          />
+        </label>
+        <label class="popup__item" for="email-request">
+          <span>E-mail *</span>
+          <input
+            type="email"
+            name="email"
+            id="email-request"
+            placeholder="Ваш E-mail"
+          />
+        </label>
+        <p class="popup__description">
+          <sup>*</sup>Поля отмеченные звездочкой обязательны для заполнения
+        </p>
+        <button class="button button-orange popup__submit" type="submit">
+          Отправить
+        </button>
+      </fieldset>
     </form>
-          <form class="popup popup--callback">
-            <fieldset class="popup__window popup__window--callback">
-              <legend class="popup__header">
-                Ваши контакты
-              </legend>
-              <button class="button popup-close" type="reset" aria-label="Close">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </button>
-              <label class="popup__item" for="name">
-                <span>Имя *</span>
-                <input type="text" name="name" id="name-callback" placeholder="Ваше имя" required>
-              </label>
-              <label class="popup__item" for="phone">
-                <span>Телефон *</span>
-                <input type="tel" name="tel" id="phone-callback" placeholder="Ваш телефон" required>
-              </label>
-              <p class="popup__description">
-                Поля отмеченные звездочкой обязательны для заполнения
-              </p>
-              <button class="button button-orange popup__submit" type="submit">
-                Отправить
-              </button>
-            </fieldset>
-          </form>
+    <form class="popup popup--callback">
+      <fieldset class="popup__window popup__window--callback">
+        <legend class="popup__header">
+          Ваши контакты
+        </legend>
+        <button class="button popup-close" type="reset" aria-label="Close">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <label class="popup__item" for="name-callback">
+          <span>Имя *</span>
+          <input
+            type="text"
+            name="name"
+            id="name-callback"
+            placeholder="Ваше имя"
+          />
+        </label>
+        <label class="popup__item" for="phone-callback">
+          <span>Телефон *</span>
+          <input
+            type="tel"
+            name="phone"
+            id="phone-callback"
+            placeholder="Ваш телефон"
+          />
+        </label>
+        <p class="popup__description">
+          Поля отмеченные звездочкой обязательны для заполнения
+        </p>
+        <button class="button button-orange popup__submit" type="submit">
+          Отправить
+        </button>
+      </fieldset>
+    </form>
     <header class="header">
       <div class="wrap-container flex">
         <button class="button header__burger" aria-label="Burger button">
@@ -107,7 +193,9 @@
           <a class="header__phone" href="tel:+74999555577">
             +7 (499) 995-55-77
           </a>
-          <button class="button-transparent header__callback button-transparent--phone-icon popup-open-callback">
+          <button
+            class="button-transparent header__callback button-transparent--phone-icon popup-open-callback"
+          >
             Заказать звонок
           </button>
         </div>
@@ -117,7 +205,12 @@
       <section class="about">
         <div class="wrap-container about__wrap-container">
           <div class="about__img-wrapper img-wrapper">
-            <img src="img/dude.png" class="img-wrapper__photo" alt="Чувак" aria-hidden="true">
+            <img
+              src="img/dude.png"
+              class="img-wrapper__photo"
+              alt="Чувак"
+              aria-hidden="true"
+            />
           </div>
           <h1 class="about__name">
             Дмитрий Алексеев
@@ -125,7 +218,7 @@
           <p class="about__dev">
             Frontend-разработчик и веб-верстальщик
           </p>
-          <button class=" button-orange about__learn-more popup-open-request">
+          <button class="button-orange about__learn-more popup-open-request">
             Узнать больше
           </button>
           <div class="about__symbol symbol" aria-hidden="true">
@@ -141,19 +234,21 @@
         <h2 class="doings__title">Что я делаю</h2>
         <ul class="wrap-container doings__wrap-container flex doings__flex">
           <li class="doings__things doings__things--landing">
-              Вёрстка лендинг&mdash;страниц и&nbsp;сайтов любой сложности
+            Вёрстка лендинг&mdash;страниц и&nbsp;сайтов любой сложности
           </li>
           <li class="doings__things doings__things--responsive">
-              Адаптивная вёрстка под все браузеры и&nbsp;устройства
+            Адаптивная вёрстка под все браузеры и&nbsp;устройства
           </li>
           <li class="doings__things doings__things--programming">
-              Frontend&mdash;разработка и&nbsp;программирование
+            Frontend&mdash;разработка и&nbsp;программирование
           </li>
           <li class="doings__things doings__things--coding">
-              Исправление и&nbsp;доработка существующей вёрстки
+            Исправление и&nbsp;доработка существующей вёрстки
           </li>
         </ul>
-        <button class="button-orange doings__request-price popup-open-request">Узнать стоимость</button>
+        <button class="button-orange doings__request-price popup-open-request">
+          Узнать стоимость
+        </button>
       </section>
       <section class="example" id="example">
         <div class="wrap-container example__wrap-container">
@@ -162,20 +257,32 @@
             <ul class="slider__list">
               <li class="slider__item">
                 <a href="#" class="slider__link">
-                  <img src="img/hypnotherapy.png" alt="Фото сайта" class="slider__image">
-                    Сайт психолога Веры Антоновой
+                  <img
+                    src="img/hypnotherapy.png"
+                    alt="Фото сайта"
+                    class="slider__image"
+                  />
+                  Сайт психолога Веры Антоновой
                 </a>
               </li>
               <li class="slider__item">
                 <a href="#" class="slider__link">
-                  <img src="img/child-wear.png" alt="Фото сайта" class="slider__image">
-                    Интернет-магазин детской одежды
+                  <img
+                    src="img/child-wear.png"
+                    alt="Фото сайта"
+                    class="slider__image"
+                  />
+                  Интернет-магазин детской одежды
                 </a>
               </li>
               <li class="slider__item">
                 <a href="#" class="slider__link">
-                  <img src="img/fishman.png" alt="Фото сайта" class="slider__image">
-                    Сайт магазина «Рыболов»
+                  <img
+                    src="img/fishman.png"
+                    alt="Фото сайта"
+                    class="slider__image"
+                  />
+                  Сайт магазина «Рыболов»
                 </a>
               </li>
             </ul>
@@ -184,15 +291,20 @@
             <div class="slider__pagination paginator"></div>
           </div>
         </div>
-        <button class="button-orange example__order popup-open-request">Заказать проект</button>
+        <button class="button-orange example__order popup-open-request">
+          Заказать проект
+        </button>
       </section>
       <section class="price" id="price">
         <div class="price__detail">
           <h2 class="price__info">
-            Адаптивная вёрстка под все устройства и&nbsp;браузеры от&nbsp;1000 рублей всего за&nbsp;4&nbsp;часа.*
+            Адаптивная вёрстка под все устройства и&nbsp;браузеры от&nbsp;1000
+            рублей всего за&nbsp;4&nbsp;часа.*
           </h2>
           <p class="price__note">
-            * Срок и&nbsp;стоимость могут отличаться от&nbsp;заявленных и&nbsp;рассчитываются индивидуально, в&nbsp;зависимости от&nbsp;сложности задач.
+            * Срок и&nbsp;стоимость могут отличаться от&nbsp;заявленных
+            и&nbsp;рассчитываются индивидуально, в&nbsp;зависимости
+            от&nbsp;сложности задач.
           </p>
           <div class="price__static-symbol static-symbol" aria-hidden="true">
             <span class="static-symbol__item">{ }</span>
@@ -220,15 +332,23 @@
           </ul>
         </nav>
         <address class="footer__contacts contacts">
-          <a class="contacts__link contacts__link--gray contacts__link--phone" href="tel:+74999555577">
+          <a
+            class="contacts__link contacts__link--gray contacts__link--phone"
+            href="tel:+74999555577"
+          >
             +7 (499) 995-55-77
           </a>
-          <a class="contacts__link contacts__link--gray contacts__link--e-mail" href="mailto:dmitry@alekseev.com">
+          <a
+            class="contacts__link contacts__link--gray contacts__link--e-mail"
+            href="mailto:dmitry@alekseev.com"
+          >
             dmitry@alekseev.com
           </a>
         </address>
         <div class="footer__links">
-          <button class="button-transparent footer__callback popup-open-callback">
+          <button
+            class="button-transparent footer__callback popup-open-callback"
+          >
             Заказать звонок
           </button>
           <ul class="footer__social social">
