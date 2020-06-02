@@ -1,29 +1,31 @@
 $(document).ready(function () {
-  $('.about__symbol').addClass('about__symbol--active');
+  $(".about__symbol").addClass("about__symbol--active");
   $('input[type="tel"]').inputmask("+7(999)999-9999");
 
-  $('.header__burger').click(function () {
-    $(this).toggleClass('open');
-    $('.header__menu').toggleClass('header__menu--burger');
+  $(".header__burger").click(function () {
+    $(this).toggleClass("open");
+    $(".header__menu").toggleClass("header__menu--burger");
   });
 
   $(".for-anchor").on("click", "a", function (event) {
     event.preventDefault();
-    var id = $(this).attr('href'),
+    var id = $(this).attr("href"),
       top = $(id).offset().top;
-    $('body,html').animate({ scrollTop: top }, 800);
+    $("body,html").animate({
+      scrollTop: top
+    }, 800);
   });
 
-  $('.popup-open-request').click(function () {
-    $('.popup--request').fadeIn();
-    $('body').addClass('scroll-off');
-    $('header, main, footer').addClass('blur');
+  $(".popup-open-request").click(function () {
+    $(".popup--request").fadeIn();
+    $("body").addClass("scroll-off");
+    $("header, main, footer").addClass("blur");
   });
 
-  $('.popup-open-callback').click(function () {
-    $('.popup--callback').fadeIn();
-    $('body').addClass('scroll-off');
-    $('header, main, footer').addClass('blur');
+  $(".popup-open-callback").click(function () {
+    $(".popup--callback").fadeIn();
+    $("body").addClass("scroll-off");
+    $("header, main, footer").addClass("blur");
   });
 
   function popupClose() {
@@ -43,15 +45,14 @@ $(document).ready(function () {
     }
   });
 
-
-  $('form').each(function () {
+  $("form").each(function () {
     jQuery.validator.addMethod("checkMask", function (value, element) {
       return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value);
     });
+    jQuery.validator.addMethod("email", function (value, element) {
+        return /^[a-z0-9_.-]+@[a-z0-9-]+\.[a-z]{2,6}$/.test(value)
+    });
     $(this).validate({
-      errorPlacement(error, element) {
-        return true;
-      },
       focusInvalid: false,
       rules: {
         phone: {
@@ -68,21 +69,35 @@ $(document).ready(function () {
           rangelength: [2, 50],
         },
       },
+      messages: {
+        name: {
+          required: "Поле 'Имя' обязательно к заполнению",
+          rangelength: "Введите не менее 2-х символов в поле 'Имя'",
+        },
+        phone: {
+          required: "Номер телефона обязателен к заполнению",
+          checkMask: "Номер телефона обязателен к заполнению",
+        },
+        email: {
+          required: "Поле 'Email' обязательно к заполнению",
+          email: "Необходим формат адреса email",
+        },
+      },
       submitHandler(form) {
         $.ajax({
-          type: 'POST',
-          url: '/mail.php',
+          type: "POST",
+          url: "/mail.php",
           data: $(form).serialize(),
         }).done(() => {
           popupClose();
-          $('form').trigger('reset');
+          $("form").trigger("reset");
           console.log("ok");
+          alert("Заявка отправлена!");
         });
         return false;
       },
     });
   });
-
 
   new Swiper(".slider", {
     slidesPerView: 1,
